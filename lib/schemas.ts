@@ -37,6 +37,7 @@ const SocialSchema = z.object({
 });
 
 const SiteSchema = z.object({
+  emailLabel: z.string(),
   nav: z.object({
     label: z.string(),
     links: z.array(z.object({ label: z.string(), href: z.string() })),

@@ -9,18 +9,40 @@ type NavbarProps = {
 };
 
 export default function Navbar({ label, links, heroId = "hero" }: NavbarProps) {
-  const [overHero, setOverHero] = useState(true);
+  const [heroVisible, setHeroVisible] = useState(true);
+  const [cloudAtNav, setCloudAtNav] = useState(false);
+  const overHero = heroVisible && !cloudAtNav;
 
   useEffect(() => {
     const hero = document.getElementById(heroId);
     if (!hero) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setOverHero(entry.isIntersecting),
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => setHeroVisible(entry.isIntersecting),
       // Stop 64px early so the box appears as the hero's end passes under the nav.
       { rootMargin: "-64px 0px 0px 0px" },
     );
-    observer.observe(hero);
-    return () => observer.disconnect();
+    heroObserver.observe(hero);
+
+    const touching = new Set<Element>();
+    const cloudObserver = new IntersectionObserver(
+      (entries) => {
+        for (const { target, isIntersecting } of entries) {
+          if (isIntersecting) touching.add(target);
+          else touching.delete(target);
+        }
+        setCloudAtNav(touching.size > 0);
+      },
+      // Only the top 10% of the screen counts: the band the nav sits in.
+      { rootMargin: "0px 0px -90% 0px" },
+    );
+    document
+      .querySelectorAll("[data-cloud-layer]")
+      .forEach((layer) => cloudObserver.observe(layer));
+
+    return () => {
+      heroObserver.disconnect();
+      cloudObserver.disconnect();
+    };
   }, [heroId]);
 
   return (
