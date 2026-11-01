@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Palette from docs/03-UIspec.md section 2. Tailwind's defaults are cleared so only these exist. */
+@theme {
+  --color-*: initial;
+  --color-sky-deep: #3f8fd0;
+  --color-sky: #5fa8dc;
+  --color-sky-light: #a9d3ee;
+  --color-sky-mist: #dceef7;
+  --color-aqua-mist: #cde8e4;
+  --color-cloud: #f8eed6;
+  --color-cloud-shade: #d9ddd3;
+  --color-paper: #fbf5e6;
+  --color-water: #4fa8b8;
+  --color-water-deep: #2f8597;
+  --color-leaf: #4f9a44;
+  --color-leaf-soft: #bcd9b0;
+  --color-sun: #f0b44c;
+  --color-wood: #b8975f;
+  --color-ink: #1f4650;
+  --color-muted: #4f6f76;
+  --color-card: #ffffffb3;
+  --color-storm-1: #2b3a4a;
+  --color-storm-2: #4a5a6e;
+  --color-bolt: #fff1a8;
+  --color-footer: #1f4650;
+}
+
+@theme inline {
+  --font-serif: var(--font-instrument-serif);
+  --font-sans: var(--font-dm-sans);
+}
+
+body {
+  min-height: 100svh;
+  background: linear-gradient(
+    to bottom,
+    var(--color-sky-deep),
+    var(--color-sky-light),
+    var(--color-aqua-mist),
+    var(--color-leaf-soft),
+    var(--color-paper)
+  );
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
