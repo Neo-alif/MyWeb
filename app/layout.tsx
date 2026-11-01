@@ -1,4 +1,6 @@
 import { DM_Sans, Instrument_Serif } from "next/font/google";
+import Footer from "@/components/sections/Footer";
+import SmoothScroll from "@/components/providers/SmoothScroll";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -18,7 +20,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${dmSans.variable} ${instrumentSerif.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

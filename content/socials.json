@@ -1,0 +1,6 @@
+[
+  { "platform": "github", "label": "GitHub", "url": "https://github.com/Neo-alif", "image": "/images/socials/github.webp", "order": 1 },
+  { "platform": "linkedin", "label": "LinkedIn", "url": "", "image": "/images/socials/linkedin.webp", "order": 2 },
+  { "platform": "codeforces", "label": "Codeforces", "url": "https://codeforces.com/profile/Neo_Alif", "image": "/images/socials/codeforces.webp", "order": 3 },
+  { "platform": "codechef", "label": "CodeChef", "url": "https://www.codechef.com/users/neo_alif", "image": "/images/socials/codechef.webp", "order": 4 }
+]

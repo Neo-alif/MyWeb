@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "label": "Main",
+    "links": [
+      { "label": "Contact", "href": "#contact" },
+      { "label": "Socials", "href": "#socials" }
+    ]
+  },
+  "footer": {
+    "picAlt": "Portrait of Alif Abdullah",
+    "copyright": "© Alif Abdullah"
+  },
+  "notFound": {
+    "title": "Lost in the clouds",
+    "message": "This page floated away. Let's get you back to the sky.",
+    "homeLabel": "Back home"
+  }
+}

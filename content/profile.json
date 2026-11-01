@@ -1,0 +1,12 @@
+{
+  "name": "Alif Abdullah",
+  "shortName": "Alif",
+  "heroGreeting": "Welcome, this is Alif Abdullah",
+  "heroBio": "Placeholder one line bio.",
+  "heroDesktop": "/images/hero-desktop.webp",
+  "heroMobile": "/images/hero-mobile.webp",
+  "heroAlt": "Alif standing on a boat on a river, watercolor illustration",
+  "footerPic": "/images/alif-footer.webp",
+  "footerBio": "Placeholder short bio. Replace this in content/profile.json.",
+  "email": "alifabd4023@gmail.com"
+}
