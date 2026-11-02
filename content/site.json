@@ -1,5 +1,9 @@
 {
   "emailLabel": "Email",
+  "heroCta": "See my works",
+  "headings": {
+    "education": "Education"
+  },
   "nav": {
     "label": "Main",
     "links": [

@@ -1,4 +1,6 @@
 import CloudDivider from "@/components/clouds/CloudDivider";
+import Education from "@/components/sections/Education";
+import Hero from "@/components/sections/Hero";
 import IconLinks from "@/components/ui/IconLinks";
 import Navbar from "@/components/ui/Navbar";
 import { profile, site, socials } from "@/lib/schemas";
@@ -7,10 +9,11 @@ export default function Home() {
   return (
     <>
       <Navbar label={site.nav.label} links={site.nav.links} />
-      {/* Stubs: Phases 4 and 7 fill these in. */}
       <main>
-        <section id="hero" className="min-h-svh" />
+        <Hero />
         <CloudDivider />
+        <Education />
+        {/* Stubs: Phase 6 replaces these with the last page. */}
         <section
           id="socials"
           className="flex min-h-svh items-center justify-center px-4"

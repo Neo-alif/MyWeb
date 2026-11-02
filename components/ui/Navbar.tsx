@@ -48,6 +48,7 @@ export default function Navbar({ label, links, heroId = "hero" }: NavbarProps) {
   return (
     <nav
       aria-label={label}
+      data-intro="nav"
       className="fixed inset-x-2 top-3 z-50 mx-auto flex max-w-[420px] justify-center gap-1 rounded-full p-1"
     >
       {/* Separate layer so the box change is an opacity fade. */}

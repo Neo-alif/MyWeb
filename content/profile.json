@@ -1,8 +1,8 @@
 {
   "name": "Alif Abdullah",
   "shortName": "Alif",
-  "heroGreeting": "Welcome, this is Alif Abdullah",
-  "heroBio": "Placeholder one line bio.",
+  "heroGreeting": "Welcome\nThis is\nAlif Abdullah",
+  "heroBio": "Learning, building, and figuring things out as I go.",
   "heroDesktop": "/images/hero-desktop.webp",
   "heroMobile": "/images/hero-mobile.webp",
   "heroAlt": "Alif standing on a boat on a river, watercolor illustration",

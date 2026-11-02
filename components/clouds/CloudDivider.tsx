@@ -38,7 +38,8 @@ export default function CloudDivider() {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none relative z-10 -my-[10svh] h-[50svh] overflow-x-clip md:h-[70svh]"
+      // Negative margins take it out of the page flow, centred on the join.
+      className="pointer-events-none relative z-10 -my-[20svh] h-[40svh] overflow-x-clip md:-my-[25svh] md:h-[50svh]"
     >
       <DriftLayer
         progress={scrollYProgress}

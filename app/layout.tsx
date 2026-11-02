@@ -19,7 +19,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${dmSans.variable} ${instrumentSerif.variable} antialiased`}
+      // The head script below adds a class before React hydrates.
+      suppressHydrationWarning
     >
+      <head>
+        {/* Runs before first paint, so hero text never flashes before its intro. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("intro")`,
+          }}
+        />
+      </head>
       <body>
         <SmoothScroll />
         {children}

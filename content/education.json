@@ -1,0 +1,27 @@
+[
+  {
+    "id": "university",
+    "heading": "University",
+    "lines": [
+      "Chittagong University of Engineering and Technology",
+      "BSc. in Computer Science Engineering",
+      "Year : 2026-2030"
+    ],
+    "logo": "/images/logos/cuet.webp",
+    "tint": "cloud"
+  },
+  {
+    "id": "college",
+    "heading": "College",
+    "lines": ["Notre Dame College, Dhaka", "Year : 2023-2025", "HSC GPA : 5.00"],
+    "logo": "/images/logos/ndc.webp",
+    "tint": "sky-mist"
+  },
+  {
+    "id": "school",
+    "heading": "School",
+    "lines": ["Chittagong Collegiate School", "Year : 2017 - 2023", "SSC GPA : 5.00"],
+    "logo": "/images/logos/ccs.webp",
+    "tint": "paper"
+  }
+]

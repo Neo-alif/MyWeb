@@ -1,4 +1,5 @@
 import { z } from "zod";
+import educationJson from "@/content/education.json";
 import profileJson from "@/content/profile.json";
 import siteJson from "@/content/site.json";
 import socialsJson from "@/content/socials.json";
@@ -15,6 +16,14 @@ const ProfileSchema = z.object({
   footerBio: z.string(),
   email: z.email(),
   location: z.string().optional(),
+});
+
+const EducationSchema = z.object({
+  id: z.enum(["university", "college", "school"]),
+  heading: z.string(),
+  lines: z.array(z.string()),
+  logo: z.string(),
+  tint: z.enum(["cloud", "paper", "sky-mist", "aqua-mist", "leaf-soft"]),
 });
 
 const SocialSchema = z.object({
@@ -38,6 +47,8 @@ const SocialSchema = z.object({
 
 const SiteSchema = z.object({
   emailLabel: z.string(),
+  heroCta: z.string(),
+  headings: z.object({ education: z.string() }),
   nav: z.object({
     label: z.string(),
     links: z.array(z.object({ label: z.string(), href: z.string() })),
@@ -56,6 +67,7 @@ const SiteSchema = z.object({
 export type Social = z.infer<typeof SocialSchema>;
 
 export const profile = ProfileSchema.parse(profileJson);
+export const education = z.array(EducationSchema).parse(educationJson);
 export const socials = z
   .array(SocialSchema)
   .parse(socialsJson)
