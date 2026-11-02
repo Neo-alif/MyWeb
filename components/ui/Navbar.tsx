@@ -2,6 +2,29 @@
 
 import { useEffect, useState } from "react";
 
+// Waits for the page to stop moving, since Lenis glides to the target.
+function pulseOnArrival(href: string) {
+  const target = document.querySelector(`${href}[data-arrival-pulse]`);
+  if (!target) return;
+  let lastY = -1;
+  let stillFrames = 0;
+  const check = () => {
+    stillFrames = window.scrollY === lastY ? stillFrames + 1 : 0;
+    lastY = window.scrollY;
+    if (stillFrames < 6) {
+      requestAnimationFrame(check);
+      return;
+    }
+    target.classList.add("arrival-pulse");
+    target.addEventListener(
+      "animationend",
+      () => target.classList.remove("arrival-pulse"),
+      { once: true },
+    );
+  };
+  requestAnimationFrame(check);
+}
+
 type NavbarProps = {
   label: string;
   links: { label: string; href: string }[];
@@ -62,6 +85,7 @@ export default function Navbar({ label, links, heroId = "hero" }: NavbarProps) {
         <a
           key={link.href}
           href={link.href}
+          onClick={() => pulseOnArrival(link.href)}
           className={`inline-flex min-h-11 items-center rounded-full px-5 transition-colors duration-250 focus-visible:outline-2 focus-visible:outline-current ${
             overHero
               ? "text-paper hover:text-cloud"

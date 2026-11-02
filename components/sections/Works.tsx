@@ -8,9 +8,10 @@ export default function Works() {
     <section
       id="works"
       // Starts on the cloud colour so the join with Education has no edge.
-      className="bg-linear-to-b from-cloud to-transparent to-40% px-4 pt-[34svh] pb-24 md:px-6 md:pt-[42svh]"
+      // 20svh/25svh is how far each neighbouring cloud overlaps this section.
+      className="flex min-h-svh flex-col justify-center bg-linear-to-b from-cloud to-transparent to-40% px-4 pt-[calc(20svh+72px)] pb-[calc(20svh+120px)] md:px-6 md:pt-[calc(25svh+96px)] md:pb-[calc(25svh+160px)]"
     >
-      <div className="mx-auto max-w-[1100px]">
+      <div className="mx-auto w-full max-w-[1100px]">
         <h2 className="reveal-on-scroll mb-8 font-serif text-[clamp(2rem,5vw,3.5rem)] leading-tight">
           {site.headings.works}
         </h2>

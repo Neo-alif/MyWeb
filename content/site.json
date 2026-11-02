@@ -6,7 +6,10 @@
   "nextProjectLabel": "Next project",
   "headings": {
     "education": "Education",
-    "works": "My Works"
+    "works": "My Works",
+    "findMe": "You can find me here....",
+    "socials": "Socials",
+    "coding": "Coding Related"
   },
   "nav": {
     "label": "Main",

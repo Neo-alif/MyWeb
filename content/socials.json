@@ -1,6 +1,8 @@
 [
-  { "platform": "github", "label": "GitHub", "url": "https://github.com/Neo-alif", "image": "/images/socials/github.webp", "order": 1 },
-  { "platform": "linkedin", "label": "LinkedIn", "url": "", "image": "/images/socials/linkedin.webp", "order": 2 },
-  { "platform": "codeforces", "label": "Codeforces", "url": "https://codeforces.com/profile/Neo_Alif", "image": "/images/socials/codeforces.webp", "order": 3 },
-  { "platform": "codechef", "label": "CodeChef", "url": "https://www.codechef.com/users/neo_alif", "image": "/images/socials/codechef.webp", "order": 4 }
+  { "platform": "facebook", "group": "social", "label": "Facebook", "url": "https://www.facebook.com/alifabdullah4023/", "order": 1 },
+  { "platform": "instagram", "group": "social", "label": "Instagram", "url": "https://www.instagram.com/ne0__alif/?hl=en", "order": 2 },
+  { "platform": "github", "group": "coding", "label": "GitHub", "url": "https://github.com/Neo-alif", "order": 3 },
+  { "platform": "codeforces", "group": "coding", "label": "Codeforces", "url": "https://codeforces.com/profile/Neo_Alif", "order": 4 },
+  { "platform": "codechef", "group": "coding", "label": "CodeChef", "url": "https://www.codechef.com/users/neo_alif", "order": 5 },
+  { "platform": "vjudge", "group": "coding", "label": "VJudge", "url": "https://vjudge.net/user/neo_alif", "monogram": "VJ", "order": 6 }
 ]

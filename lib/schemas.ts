@@ -43,20 +43,17 @@ const ProjectSchema = z.object({
 
 const SocialSchema = z.object({
   platform: z.enum([
-    "github",
-    "linkedin",
-    "codeforces",
-    "codechef",
     "facebook",
     "instagram",
-    "youtube",
-    "leetcode",
-    "email",
+    "github",
+    "codeforces",
+    "codechef",
+    "vjudge",
   ]),
+  group: z.enum(["social", "coding"]),
   label: z.string(),
-  handle: z.string().optional(),
-  url: z.url().or(z.literal("")), // "" hides the entry until a real link exists
-  image: z.string(),
+  url: z.url().optional(), // missing hides the tile
+  monogram: z.string().optional(), // shown when the platform has no icon
   order: z.number(),
 });
 
@@ -66,7 +63,13 @@ const SiteSchema = z.object({
   viewSiteLabel: z.string(),
   previousProjectLabel: z.string(),
   nextProjectLabel: z.string(),
-  headings: z.object({ education: z.string(), works: z.string() }),
+  headings: z.object({
+    education: z.string(),
+    works: z.string(),
+    findMe: z.string(),
+    socials: z.string(),
+    coding: z.string(),
+  }),
   nav: z.object({
     label: z.string(),
     links: z.array(z.object({ label: z.string(), href: z.string() })),

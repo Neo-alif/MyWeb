@@ -70,9 +70,29 @@ body {
   }
 }
 
+@keyframes arrival-pulse {
+  40% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes arrival-glow {
+  40% {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .scroll-hint {
     animation: hint-bounce 1.6s ease-in-out infinite;
+  }
+
+  .arrival-pulse {
+    animation: arrival-pulse 900ms ease-in-out;
+  }
+
+  .arrival-pulse::after {
+    animation: arrival-glow 900ms ease-in-out;
   }
 
   @supports (animation-timeline: view()) {
