@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Palette from docs/03-UIspec.md section 2. Tailwind's defaults are cleared so only these exist. */
+/* Site palette. Tailwind's defaults are cleared so only these exist. */
 @theme {
   --color-*: initial;
   --color-sky-deep: #3f8fd0;
