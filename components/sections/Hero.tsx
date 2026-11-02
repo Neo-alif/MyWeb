@@ -72,7 +72,11 @@ export default function Hero() {
               </span>
             ))}
           </h1>
-          <p data-intro="bio" className="mt-4 text-lg">
+          {/* Narrow until xl: at 1024x768 one long line would reach the face. */}
+          <p
+            data-intro="bio"
+            className="mt-4 text-lg md:max-w-[380px] xl:max-w-none"
+          >
             {profile.heroBio}
           </p>
         </div>

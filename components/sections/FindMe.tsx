@@ -25,7 +25,7 @@ export default function FindMe() {
           label: site.emailLabel,
           id: "contact",
         }}
-        className="reveal-on-scroll mb-12"
+        className="mb-12"
       />
       <h3 className="reveal-on-scroll mb-4 font-serif text-3xl">
         {site.headings.coding}
@@ -33,7 +33,6 @@ export default function FindMe() {
       <IconLinks
         tile
         socials={socials.filter(({ group }) => group === "coding")}
-        className="reveal-on-scroll"
       />
     </section>
   );

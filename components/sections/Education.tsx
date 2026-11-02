@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { education, site } from "@/lib/schemas";
 
@@ -18,12 +19,15 @@ export default function Education() {
           {site.headings.education}
         </h2>
         <div className="flex flex-col gap-6">
-          {education.map(({ id, heading, lines, logo, tint }) => (
+          {education.map(({ id, heading, lines, logo, tint }, i) => (
             <article
               key={id}
-              style={{
-                backgroundColor: `color-mix(in srgb, var(--color-${tint}) 75%, transparent)`,
-              }}
+              style={
+                {
+                  "--i": i,
+                  backgroundColor: `color-mix(in srgb, var(--color-${tint}) 75%, transparent)`,
+                } as CSSProperties
+              }
               className="reveal-on-scroll group relative overflow-hidden rounded-[28px] p-6 pr-24 shadow-[0_20px_50px_rgba(14,58,71,0.12)] backdrop-blur-sm md:p-8 md:pr-40"
             >
               {/* Cover on a wide box leaves only the middle of the logo showing. */}

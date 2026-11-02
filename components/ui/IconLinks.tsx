@@ -1,4 +1,4 @@
-import type { ElementType } from "react";
+import type { CSSProperties, ElementType } from "react";
 import { Mail } from "lucide-react";
 import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 import { SiCodechef, SiCodeforces } from "react-icons/si";
@@ -40,10 +40,14 @@ export default function IconLinks({
     <ul
       className={`flex flex-wrap justify-center ${tile ? "gap-4" : "gap-2"} ${className}`}
     >
-      {socials.map(({ platform, label, url, monogram }) => {
+      {socials.map(({ platform, label, url, monogram }, i) => {
         const Icon = icons[platform];
         return (
-          <li key={platform}>
+          <li
+            key={platform}
+            style={{ "--i": i } as CSSProperties}
+            className="reveal-on-scroll"
+          >
             <a
               href={url}
               target="_blank"
@@ -64,7 +68,10 @@ export default function IconLinks({
         );
       })}
       {email && (
-        <li>
+        <li
+          style={{ "--i": socials.length } as CSSProperties}
+          className="reveal-on-scroll"
+        >
           <a
             id={email.id}
             data-arrival-pulse={email.id ? "" : undefined}

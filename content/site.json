@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Alif Abdullah",
+    "description": "Alif Abdullah is a Computer Science Engineering student at CUET who loves building things with code and solving problems.",
+    "ogImage": "/images/og.jpg"
+  },
   "emailLabel": "Email",
   "heroCta": "See my works",
   "viewSiteLabel": "View the site",

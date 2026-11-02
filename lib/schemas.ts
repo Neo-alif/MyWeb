@@ -58,6 +58,11 @@ const SocialSchema = z.object({
 });
 
 const SiteSchema = z.object({
+  seo: z.object({
+    title: z.string(),
+    description: z.string(),
+    ogImage: z.string(),
+  }),
   emailLabel: z.string(),
   heroCta: z.string(),
   viewSiteLabel: z.string(),
@@ -99,3 +104,8 @@ export const socials = z
   .filter((social) => social.url)
   .toSorted((a, b) => a.order - b.order);
 export const site = SiteSchema.parse(siteJson);
+// Unset leaves the canonical and sitemap out, since a URL is never invented.
+export const siteUrl = z
+  .url()
+  .optional()
+  .parse(process.env.NEXT_PUBLIC_SITE_URL || undefined);
