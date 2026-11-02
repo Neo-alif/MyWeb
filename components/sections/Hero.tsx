@@ -77,9 +77,8 @@ export default function Hero() {
           </p>
         </div>
       </div>
-      {/* Phase 5: point this at #works. */}
       <a
-        href="#education"
+        href="#works"
         data-intro="cta"
         className="absolute bottom-4 left-4 z-20 inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-5 text-paper transition-transform hover:-translate-y-0.5 hover:bg-water-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:bottom-6 md:left-6"
       >

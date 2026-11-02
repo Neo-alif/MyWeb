@@ -1,6 +1,7 @@
 import CloudDivider from "@/components/clouds/CloudDivider";
 import Education from "@/components/sections/Education";
 import Hero from "@/components/sections/Hero";
+import Works from "@/components/sections/Works";
 import IconLinks from "@/components/ui/IconLinks";
 import Navbar from "@/components/ui/Navbar";
 import { profile, site, socials } from "@/lib/schemas";
@@ -13,6 +14,8 @@ export default function Home() {
         <Hero />
         <CloudDivider />
         <Education />
+        <CloudDivider />
+        <Works />
         {/* Stubs: Phase 6 replaces these with the last page. */}
         <section
           id="socials"

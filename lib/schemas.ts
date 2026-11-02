@@ -1,6 +1,7 @@
 import { z } from "zod";
 import educationJson from "@/content/education.json";
 import profileJson from "@/content/profile.json";
+import projectsJson from "@/content/projects.json";
 import siteJson from "@/content/site.json";
 import socialsJson from "@/content/socials.json";
 
@@ -26,6 +27,20 @@ const EducationSchema = z.object({
   tint: z.enum(["cloud", "paper", "sky-mist", "aqua-mist", "leaf-soft"]),
 });
 
+const ProjectSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  summary: z.string(),
+  tags: z.array(z.string()),
+  image: z.string().optional(),
+  logo: z.string().optional(),
+  tint: z
+    .enum(["cloud", "paper", "sky-mist", "aqua-mist", "leaf-soft", "ink"])
+    .optional(),
+  liveUrl: z.url().optional(), // missing hides the "View the site" button
+  order: z.number(),
+});
+
 const SocialSchema = z.object({
   platform: z.enum([
     "github",
@@ -48,7 +63,10 @@ const SocialSchema = z.object({
 const SiteSchema = z.object({
   emailLabel: z.string(),
   heroCta: z.string(),
-  headings: z.object({ education: z.string() }),
+  viewSiteLabel: z.string(),
+  previousProjectLabel: z.string(),
+  nextProjectLabel: z.string(),
+  headings: z.object({ education: z.string(), works: z.string() }),
   nav: z.object({
     label: z.string(),
     links: z.array(z.object({ label: z.string(), href: z.string() })),
@@ -68,6 +86,10 @@ export type Social = z.infer<typeof SocialSchema>;
 
 export const profile = ProfileSchema.parse(profileJson);
 export const education = z.array(EducationSchema).parse(educationJson);
+export const projects = z
+  .array(ProjectSchema)
+  .parse(projectsJson)
+  .toSorted((a, b) => a.order - b.order);
 export const socials = z
   .array(SocialSchema)
   .parse(socialsJson)

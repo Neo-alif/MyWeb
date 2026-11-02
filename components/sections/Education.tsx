@@ -6,8 +6,13 @@ export default function Education() {
     <section
       id="education"
       // Starts on the cloud colour so the join with the hero has no edge.
-      className="bg-linear-to-b from-cloud to-transparent to-40% px-4 pt-[34svh] pb-24 md:px-6 md:pt-[42svh]"
+      className="relative bg-linear-to-b from-cloud to-transparent to-40% px-4 py-[34svh] md:px-6 md:py-[42svh]"
     >
+      {/* Fades into the cloud colour that Works starts on. */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-[34svh] bg-linear-to-t from-cloud to-transparent md:h-[42svh]"
+      />
       <div className="mx-auto max-w-[1100px]">
         <h2 className="reveal-on-scroll mb-8 font-serif text-[clamp(2rem,5vw,3.5rem)] leading-tight">
           {site.headings.education}

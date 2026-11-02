@@ -84,13 +84,16 @@ body {
   }
 }
 
-/* Touch screens skip these rules, so the logo is always visible there. */
+/* Touch screens skip these rules, so the logo and button are always visible there. */
 @media (hover: hover) {
-  .hover-logo {
+  .hover-logo,
+  .hover-button {
     opacity: 0;
   }
 
-  .group:hover .hover-logo {
+  .group:hover .hover-logo,
+  .group:hover .hover-button,
+  .hover-button:focus-visible {
     opacity: 1;
   }
 }
@@ -103,7 +106,16 @@ body {
       transform 300ms;
   }
 
-  .group:hover .hover-logo {
+  .hover-button {
+    transform: translateY(8px);
+    transition:
+      opacity 700ms,
+      transform 700ms;
+  }
+
+  .group:hover .hover-logo,
+  .group:hover .hover-button,
+  .hover-button:focus-visible {
     transform: none;
   }
 }

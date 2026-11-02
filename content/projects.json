@@ -1,0 +1,12 @@
+[
+  {
+    "id": "bd-income-tax-calculator",
+    "title": "BD Income Tax Calculator",
+    "summary": "People can count their income taxes by using this",
+    "tags": ["Next.js", "Tax", "Calculator"],
+    "logo": "/images/projects/tax-calculator.webp",
+    "tint": "ink",
+    "liveUrl": "https://bd-income-tax-calculator-alpha.vercel.app/",
+    "order": 1
+  }
+]

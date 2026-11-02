@@ -1,8 +1,12 @@
 {
   "emailLabel": "Email",
   "heroCta": "See my works",
+  "viewSiteLabel": "View the site",
+  "previousProjectLabel": "Previous project",
+  "nextProjectLabel": "Next project",
   "headings": {
-    "education": "Education"
+    "education": "Education",
+    "works": "My Works"
   },
   "nav": {
     "label": "Main",
